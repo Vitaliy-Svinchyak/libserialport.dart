@@ -347,6 +347,10 @@ class _SerialPortImpl implements SerialPort {
     Util.call(() => dylib.sp_set_config(_port, ptr));
   }
 
+  int setBaudRate(int baudRate) {
+    return Util.call(() => dylib.sp_set_baudrate(_port, baudRate));
+  }
+
   @override
   Uint8List read(int bytes, {int timeout = -1}) {
     return Util.read(bytes, (ffi.Pointer<ffi.Uint8> ptr) {
