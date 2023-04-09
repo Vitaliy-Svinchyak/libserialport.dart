@@ -104,6 +104,8 @@ abstract class SerialPort {
   /// Closes the serial port.
   bool close();
 
+  int setBaudRate(int baudRate);
+
   /// Gets whether the serial port is open.
   bool get isOpen;
 
